@@ -1,25 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <style>
-    body {
-      background-image: url('logo_marcadagua.jpeg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-      background-size: 300px;
-      opacity: 1;
-    }
-  </style>
-  <meta charset="UTF-8" />
-  <title>Portfólio - SSI BRASIL</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | SSI Brasil</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header><h1>Portfólio</h1></header>
-  <main>
-    <p>Confira nossos projetos de automação realizados com grandes marcas. (Espaço reservado para imagens)</p>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col font-sans">
+  <nav class="bg-gray-800 shadow-md px-6 py-3 flex justify-between text-sm text-gray-300">
+    <div class="space-x-4">
+      <a href="index.html" class="hover:text-cyan-400">Início</a>
+      <a href="sobre.html" class="hover:text-cyan-400">Sobre Nós</a>
+      <a href="servicos.html" class="hover:text-cyan-400">Serviços</a>
+      <a href="parceiros.html" class="hover:text-cyan-400">Parceiros</a>
+      <a href="portifolio.html" class="hover:text-cyan-400">Portfólio</a>
+      <a href="contato.html" class="hover:text-cyan-400">Contato</a>
+    </div>
+  </nav>
+  <main class="flex-grow">
+    <h1 class="text-center text-3xl font-bold text-cyan-400 mt-10 mb-4">Nosso Portfólio</h1>
+    <p class="text-center text-gray-300 mb-10 px-4">Conheça alguns de nossos projetos e integrações em automação, segurança, controle de acesso e muito mais.</p>
+    <section class="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250303_112139.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250227_152526.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250219_144205.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250217_100032.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250108_102049.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250108_102138.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250108_102251.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250117_094009.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250207_172245.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div>
+    <div class="bg-gray-800 p-4 rounded shadow">
+      <img class="rounded mb-3" src="20250213_080036.jpg" alt="Projeto SSI" class="w-full h-auto rounded" loading="lazy">
+    </div></section>
   </main>
-  <a href='index.html'>Voltar</a>
+  <footer class="bg-gray-800 text-center text-sm text-gray-400 py-6 border-t border-gray-700">
+    <p>Rua Antonio Maciel de Oliveira, 330 – CEP 06757-030</p>
+    <p>WhatsApp: <a href="https://wa.me/5511954897008" class="text-green-400 hover:underline">(11) 95489-7008</a></p>
+    <p>Email: <a href="mailto:suporte.ssi.br@gmail.com" class="text-blue-400 hover:underline">suporte.ssi.br@gmail.com</a></p>
+    <p class="mt-2 text-xs text-gray-500">Todos os direitos reservados © SSI BRASIL SA</p>
+  </footer>
 </body>
 </html>
