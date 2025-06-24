@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    body {
+      background-image: url('logo_marcadagua.jpeg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: 300px;
+      opacity: 1;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSI BRASIL - Soluções em Sistemas de Automação</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .menu-central {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+    .menu-central a {
+      display: block;
+      padding: 30px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .menu-central a:hover {
+      transform: translateY(-5px);
+    }
+    .home { background-color: #007BFF; }
+    .sobre { background-color: #28A745; }
+    .servicos { background-color: #17A2B8; }
+    .parceiros { background-color: #FFC107; color: #000; }
+    .portifolio { background-color: #6F42C1; }
+    .contato { background-color: #DC3545; }
+
+    @media (max-width: 600px) {
+      .menu-central {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN NO TOPO -->
+<div style="background:#f0f0f0; padding:10px; text-align:right;">
+  <input type="email" id="email" placeholder="Email" required style="padding:5px;">
+  <input type="password" id="password" placeholder="Senha" required style="padding:5px;">
+  <button onclick="login()">Entrar</button>
+  <button onclick="signup()">Cadastrar</button>
+  <span id="auth-msg" style="color:red; padding-left:10px;"></span>
+</div>
+
+  
+  <header style="background: linear-gradient(to right, #007BFF, #0056b3); color: white; padding: 60px 20px; text-align: center;">
+    <h1 style="font-size: 3em; margin-bottom: 0.3em;">Sejam Bem-vindos à</h1>
+    <h2 style="font-size: 2.5em; margin: 0;">SSI BRASIL</h2>
+    <p style="font-size: 1.3em; margin-top: 1em;">Soluções em Sistemas de Automação</p>
+  </header>
+
+  
+  <main style="display: flex; justify-content: flex-start; align-items: center; flex-direction: column; text-align: center; min-height: 90vh; padding-top: 30px;">
+  <img src="logo_home.jpeg" alt="Logo SSI BRASIL" style="max-width: 180px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" />
+
+    <div class="menu-central">
+      
+      <a href="sobre.html" class="sobre">Sobre Nós</a>
+      <a href="servicos.html" class="servicos">Serviços</a>
+      <a href="parceiros.html" class="parceiros">Parceiros</a>
+      
+      <a href="contato.html" class="contato">Contato</a>
+    </div>
+  </main>
+  
+  
+  
+  <footer style="position:fixed; bottom:0; left:0; width:100%; background:#0a2540; color:white; text-align:center; padding:15px 10px;">
+    SSI BRASIL © 2025 - Todos os direitos reservados |
+    <a href="mailto:suporte.ssi.br@gmail.com" style="color:white; text-decoration:underline;">suporte.ssi.br@gmail.com</a> |
+    <a href="https://wa.me/5511981374513" target="_blank" style="color:white; text-decoration:underline;">(11) 98137-4513</a>
+  </footer>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+  const supabaseUrl = 'https://motqggvxplegckxuvujc.supabase.co'
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vdHFnZ3Z4cGxlZ2NreHV2dWpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzOTY4MjMsImV4cCI6MjA2NTk3MjgyM30.C1DLQis5upgmaPeTXgt-rMztlTeAm5ODKjVC_XhC4-o'
+  const supabase = createClient(supabaseUrl, supabaseKey)
+
+  async function login() {
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) {
+      document.getElementById('auth-msg').innerText = error.message
+    } else {
+      window.location.href = 'nosso-parceiro.html'
+    }
+  }
+
+  async function signup() {
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    const { error } = await supabase.auth.signUp({ email, password })
+    if (error) {
+      document.getElementById('auth-msg').innerText = error.message
+    } else {
+      document.getElementById('auth-msg').innerText = 'Verifique seu email para confirmar o cadastro.'
+    }
+  }
+
+  window.login = login
+  window.signup = signup
+</script>
+
+</body>
+</html>
