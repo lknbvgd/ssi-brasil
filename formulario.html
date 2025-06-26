@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cadastro de Parceiro</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      padding: 40px;
+    }
+    h2 {
+      color: #0f172a;
+    }
+    form {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+    }
+    button {
+      background-color: #0f172a;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" style="
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+">
+  ← Voltar à Página Inicial
+</a>
+
+<h2>Cadastro de Parceiro Prestador</h2>
+<form action="https://formspree.io/f/xzzgadpp" id="form-parceiro" method="POST">
+<input name="nome" placeholder="Nome" required="" type="text"/>
+<input name="telefone" placeholder="Telefone" required="" type="tel"/>
+<input name="email" placeholder="Email" required="" type="email"/>
+<input name="empresa" placeholder="Empresa" required="" type="text"/>
+<input name="segmento" placeholder="Segmento" required="" type="text"/>
+<button type="submit">Enviar</button>
+<p id="msg" style="color: green;"></p></form>
+<script>
+  document.getElementById("form-parceiro").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" }
+    })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById("msg").innerText = "✅ Enviado com sucesso!";
+        form.reset();
+      } else {
+        document.getElementById("msg").innerText = "❌ Erro ao enviar. Tente novamente.";
+      }
+    });
+  });
+</script>
+<script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+    const supabase = createClient(
+      "https://motqggvxplegckxuvujc.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vdHFnZ3Z4cGxlZ2NreHV2dWpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzOTY4MjMsImV4cCI6MjA2NTk3MjgyM30.C1DLQis5upgmaPeTXgt-rMztlTeAm5ODKjVC_XhC4-o"
+    );
+
+    const checkSession = async () => {
+      const { data } = await supabase.auth.getSession();
+      if (!data.session) {
+        window.location.href = "entrar.html";
+      }
+    };
+
+    checkSession();
+  </script>
+<section id="cursos" style="margin-top: 40px;">
+<h2>Escolha seu curso</h2>
+<div style="display: flex; gap: 20px; flex-wrap: wrap;">
+<div class="curso-card" onclick="mostrarCurso('automacao')" onmouseout="unhoverCurso(this)" onmouseover="hoverCurso(this)">
+<h3>Automação</h3>
+</div>
+<div class="curso-card" onclick="mostrarCurso('eletrica')" onmouseout="unhoverCurso(this)" onmouseover="hoverCurso(this)">
+<h3>Elétrica</h3>
+</div>
+<div class="curso-card" onclick="mostrarCurso('tic')" onmouseout="unhoverCurso(this)" onmouseover="hoverCurso(this)">
+<h3>TIC</h3>
+</div>
+</div>
+<div id="curso-descricao" style="margin-top: 30px;"></div>
+</section>
+<style>
+  .curso-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .curso-card:hover {
+    background-color: #007BFF;
+    color: white;
+  }
+</style>
+<script>
+  function hoverCurso(el) {
+    el.style.boxShadow = '0 0 10px #007BFF';
+  }
+  function unhoverCurso(el) {
+    el.style.boxShadow = 'none';
+  }
+
+  function mostrarCurso(tipo) {
+    const nome = document.getElementById("input-nome")?.value || "Aluno";
+    let conteudo = "";
+    if (tipo === "automacao") {
+      conteudo = `<h3>Curso de Automação</h3><p>Aprenda conceitos de sensores, CLPs e sistemas automatizados.</p>
+                  <a href="curso-automacao.html" target="_blank">Ver mais</a><br><br>
+                  <button onclick="gerarCertificadoPDF('${nome}', 'Automação')">Gerar Certificado</button>`;
+    } else if (tipo === "eletrica") {
+      conteudo = `<h3>Curso de Elétrica</h3><p>Fundamentos da eletricidade, circuitos e instalações.</p>
+                  <a href="curso-eletrica.html" target="_blank">Ver mais</a><br><br>
+                  <button onclick="gerarCertificadoPDF('${nome}', 'Elétrica')">Gerar Certificado</button>`;
+    } else if (tipo === "tic") {
+      conteudo = `<h3>Curso de TIC</h3><p>Tecnologias da Informação e Comunicação aplicadas ao dia a dia.</p>
+                  <a href="curso-tic.html" target="_blank">Ver mais</a><br><br>
+                  <button onclick="gerarCertificadoPDF('${nome}', 'TIC')">Gerar Certificado</button>`;
+    }
+    document.getElementById("curso-descricao").innerHTML = conteudo;
+  }
+
+  function gerarCertificadoPDF(nome, curso) {
+    const data = new Date().toLocaleDateString();
+    const texto = `Certificamos que ${nome} concluiu o curso de ${curso} em ${data}.`;
+    const blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `Certificado_${curso}_${nome.replaceAll(" ", "_")}.txt`;
+    link.click();
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="certificado.js"></script>
+
+<footer style="position:fixed; bottom:0; left:0; width:100%; background:#0a2540; color:white; text-align:center; padding:15px 10px;">
+    SSI BRASIL © 2025 - Todos os direitos reservados |
+    <a href="mailto:suporte.ssi.br@gmail.com" style="color:white; text-decoration:underline;">suporte.ssi.br@gmail.com</a> |
+    <a href="https://wa.me/5511981374513" style="color:white; text-decoration:underline;" target="_blank">(11) 98137-4513</a>
+</footer>
+</body>
+</html>

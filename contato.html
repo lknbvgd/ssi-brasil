@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    body {
+      background-image: url('logo_marcadagua.jpeg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: 300px;
+      opacity: 1;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <title>Contato - SSI BRASIL</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    form {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #f0f0f0;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Contato</h1></header>
+  
+  <main>
+    <div style="text-align:center; margin-top: 20px;">
+      <a href="index.html" style="background-color:#007BFF; color:white; padding:10px 20px; text-decoration:none; border-radius:8px;">Voltar para Home</a>
+    </div>
+
+    <form action="mailto:suporte.ssi.br@gmail.com" method="POST" enctype="text/plain">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+</body>
+</html>
+  <footer style="position:fixed; bottom:0; left:0; width:100%; background:#0a2540; color:white; text-align:center; padding:15px 10px;">
+    SSI BRASIL © 2025 - Todos os direitos reservados |
+    <a href="mailto:suporte.ssi.br@gmail.com" style="color:white; text-decoration:underline;">suporte.ssi.br@gmail.com</a> |
+    <a href="https://wa.me/5511981374513" target="_blank" style="color:white; text-decoration:underline;">(11) 98137-4513</a>
+  </footer>
+</body>
+</html>

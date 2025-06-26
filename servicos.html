@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nossos Serviços - SSI Brasil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fbfd;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #0a2540;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    main {
+      padding: 40px 20px 100px;
+      max-width: 1200px;
+      margin: auto;
+      flex-grow: 1;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #1d72b8;
+    }
+    .card p {
+      line-height: 1.5;
+    }
+    .voltar {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .voltar a {
+      text-decoration: none;
+      background: #1d72b8;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .formulario {
+      margin-top: 60px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .formulario h2 {
+      margin-top: 0;
+      color: #0a2540;
+    }
+    .formulario label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .formulario button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #0a2540;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .formulario button:hover {
+      background: #09325d;
+    }
+    footer {
+      background:#0a2540;
+      color:white;
+      text-align:center;
+      padding:15px 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>Serviços da SSI Brasil</header>
+  <main>
+    <div class="grid">
+      <div class="card"><h3>Automação Predial</h3><p>Soluções inteligentes para controle de iluminação, climatização, segurança e energia em edifícios comerciais e residenciais.</p></div>
+      <div class="card"><h3>Controle de Acesso</h3><p>Sistemas por biometria, cartão, senha ou reconhecimento facial integrados a portarias inteligentes e monitoramento remoto.</p></div>
+      <div class="card"><h3>Segurança Eletrônica</h3><p>Instalação e gerenciamento de CFTV, alarmes, sensores e cercas elétricas com acesso remoto via app.</p></div>
+      <div class="card"><h3>Infraestrutura de Redes</h3><p>Cabeamento estruturado, redes Wi-Fi e manutenção de servidores com desempenho garantido.</p></div>
+      <div class="card"><h3>Consultoria Técnica</h3><p>Implantação de novas tecnologias, redução de custos operacionais e modernização de sistemas.</p></div>
+      <div class="card"><h3>Suporte 24h</h3><p>Atendimento remoto ou presencial com SLA personalizado para garantir funcionamento contínuo.</p></div>
+    </div>
+
+    <div class="voltar">
+      <a href="index.html">← Voltar para a página inicial</a>
+    </div>
+
+    <div class="formulario">
+      <h2>Solicitar Orçamento</h2>
+      <form action="https://formspree.io/f/xzzgadpp" method="POST">
+        <label>Nome:
+          <input type="text" name="nome" required>
+        </label>
+        <label>Email:
+          <input type="email" name="email" required>
+        </label>
+        <label>Telefone:
+          <input type="tel" name="telefone" required>
+        </label>
+        <label>Digite sua solicitação:
+          <textarea name="mensagem" rows="5" required></textarea>
+        </label>
+        <button type="submit">Enviar Solicitação</button>
+      </form>
+    </div>
+  </main>
+  
+  <footer style="position:fixed; bottom:0; left:0; width:100%; background:#0a2540; color:white; text-align:center; padding:15px 10px;">
+    SSI BRASIL © 2025 - Todos os direitos reservados |
+    <a href="mailto:suporte.ssi.br@gmail.com" style="color:white; text-decoration:underline;">suporte.ssi.br@gmail.com</a> |
+    <a href="https://wa.me/5511981374513" target="_blank" style="color:white; text-decoration:underline;">(11) 98137-4513</a>
+  </footer>
+</body>
+</html>

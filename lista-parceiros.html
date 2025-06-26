@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Parceiros</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+    h2 { text-align: center; margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 12px 15px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #0066cc; color: white; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <h2>Lista de Parceiros Cadastrados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Mensagem</th>
+      </tr>
+    </thead>
+    <tbody id="parceiros-body">
+      <tr><td colspan="3">Carregando...</td></tr>
+    </tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    const supabase = supabase.createClient(
+      'https://motqggvxplegckxuvujc.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vdHFnZ3Z4cGxlZ2NreHV2dWpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzOTY4MjMsImV4cCI6MjA2NTk3MjgyM30.C1DLQis5upgmaPeTXgt-rMztlTeAm5ODKjVC_XhC4-o'
+    );
+
+    async function loadParceiros() {
+      const { data: user, error: sessionError } = await supabase.auth.getUser();
+      if (!user || sessionError) {
+        alert("Você precisa estar logado para ver esta página.");
+        window.location.href = "index.html";
+        return;
+      }
+
+      const { data, error } = await supabase.from("parceiros").select("*").order("created_at", { ascending: false });
+      const tbody = document.getElementById("parceiros-body");
+      tbody.innerHTML = "";
+
+      if (error) {
+        tbody.innerHTML = "<tr><td colspan='3'>Erro ao carregar dados.</td></tr>";
+        return;
+      }
+
+      if (data.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='3'>Nenhum parceiro cadastrado ainda.</td></tr>";
+        return;
+      }
+
+      data.forEach(parceiro => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${parceiro.name}</td>
+          <td>${parceiro.phone}</td>
+          <td>${parceiro.message}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    loadParceiros();
+  </script>
+</body>
+</html>
