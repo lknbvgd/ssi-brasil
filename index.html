@@ -1,91 +1,163 @@
+
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SSI Brasil - Início</title>
+<style>
     body {
-      background-image: url('logo_marcadagua.jpeg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-      background-size: 300px;
-      opacity: 1;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
     }
-  </style>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SSI BRASIL - Soluções em Sistemas de Automação</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .menu-central {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      flex: 1;
+    }
+    nav {
+      flex: 2;
+      display: flex;
+      justify-content: center;
       gap: 20px;
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
     }
-    .menu-central a {
-      display: block;
-      padding: 30px;
-      text-align: center;
-      color: white;
+    nav a {
       text-decoration: none;
-      font-size: 1.1em;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+      font-weight: bold;
+      color: #333;
     }
-    .menu-central a:hover {
-      transform: translateY(-5px);
+    .entrar {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 40px;
     }
-    .home { background-color: #007BFF; }
-    .sobre { background-color: #28A745; }
-    .servicos { background-color: #17A2B8; }
-    .parceiros { background-color: #FFC107; color: #000; }
-    .portifolio { background-color: #6F42C1; }
-    .contato { background-color: #DC3545; }
-
-    @media (max-width: 600px) {
-      .menu-central {
-        grid-template-columns: 1fr;
-      }
+    .entrar a {
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding-top: 80px;
+      text-align: center;
+    }
+    section.projetos {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .card {
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 12px;
+      text-align: left;
+    }
+    footer {
+      background: #0f1e3e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
     }
   </style>
-</head>
+<style>
+    .logo-container:hover .logo-dropdown {
+      display: block;
+    }
+  </style></head>
 <body>
-
-<!-- LOGIN NO TOPO -->
-<div style="background:#f0f0f0; padding:10px; text-align:right;">
-  <a href="entrar.html" style="background-color:#007BFF; color:white; padding:8px 16px; text-decoration:none; border-radius:5px;">Entrar</a>
+<header>
+<div class="logo-container" style="position: relative;">
+<div class="logo" style="cursor: pointer; display: flex; align-items: center; gap: 10px; color: #007BFF; font-weight: bold; font-size: 22px;">
+<img alt="Logo SSI" src="logo_home.jpeg" style="width: 40px; height: 40px;"/>
+    SSI BRASIL
+  </div>
+<div class="logo-dropdown" style="display: none; position: absolute; top: 50px; left: 0; background: #fff; border: 1px solid #ccc; border-radius: 5px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+<a href="https://wa.me/5511981374513" style="text-decoration: none; color: #333;" target="_blank">WhatsApp: (11) 98137-4513</a>
 </div>
-
-  
-  <header style="background: linear-gradient(to right, #007BFF, #0056b3); color: white; padding: 60px 20px; text-align: center;">
-    <h1 style="font-size: 3em; margin-bottom: 0.3em;">Sejam Bem-vindos à</h1>
-    <h2 style="font-size: 2.5em; margin: 0;">SSI BRASIL</h2>
-    <p style="font-size: 1.3em; margin-top: 1em;">Soluções em Sistemas de Automação</p>
-  </header>
-
-  
-  <main style="display: flex; justify-content: flex-start; align-items: center; flex-direction: column; text-align: center; min-height: 90vh; padding-top: 30px;">
-  <img src="logo_home.jpeg" alt="Logo SSI BRASIL" style="max-width: 180px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" />
-
-    <div class="menu-central">
-      
-      <a href="sobre.html" class="sobre">Sobre Nós</a>
-      <a href="servicos.html" class="servicos">Serviços</a>
-      <a href="parceiros.html" class="parceiros">Parceiros</a>
-      
-      <a href="contato.html" class="contato">Contato</a>
-    </div>
-  </main>
-  
-  
-  
-  <footer style="position:fixed; bottom:0; left:0; width:100%; background:#0a2540; color:white; text-align:center; padding:15px 10px;">
-    SSI BRASIL © 2025 - Todos os direitos reservados |
-    <a href="mailto:suporte.ssi.br@gmail.com" style="color:white; text-decoration:underline;">suporte.ssi.br@gmail.com</a> |
-    <a href="https://wa.me/5511981374513" target="_blank" style="color:white; text-decoration:underline;">(11) 98137-4513</a>
-  </footer>
+</div>
+<nav>
+<a href="servicos.html">Serviços</a>
+<a href="parceiros.html">Parceiros</a>
+<a href="contato.html">Contato</a>
+</nav>
+<div class="entrar">
+<a href="entrar.html">Entrar</a>
+</div>
+</header><section style="padding: 60px 20px; max-width: 900px; margin: auto; text-align: center;"><h1 style="font-size: 2.5rem; margin-bottom: 20px;">Bem‑vindo a SSI Brasil</h1><h2>Quem somos</h2><p>Na SSI Brasil, somos especialistas em soluções de automação, elétrica e tecnologia da informação, entregando inovação e eficiência para empresas e indústrias. Nossa missão é oferecer serviços de alta qualidade, com tecnologia de ponta e foco em resultados, conectando pessoas, sistemas e equipamentos de forma inteligente.</p><a href="sobre.html" style="display:inline-block;margin-top:20px;text-decoration:none;color:#007BFF;font-weight:bold;">Saiba mais sobre nós →</a></section>
+<main>
+<h1></h1>
+<p></p>
+<section class="projetos">
+<h2>Nossos Projetos</h2>
+<div class="cards">
+<div class="card">
+<img alt="Automação" src="AUTOMAÇÂO.jpg"/>
+<div class="card-content">
+<h3>Automação Industrial</h3>
+<p>Projetos com CLP, IoT e sistemas automatizados para controle e supervisão.</p>
+</div>
+</div>
+<div class="card">
+<img alt="Elétrica" src="ELETRICA.jpg"/>
+<div class="card-content">
+<h3>Infraestrutura Elétrica</h3>
+<p>Quadros, cabeamentos, sistemas de energia e aterramento industrial.</p>
+</div>
+</div>
+<div class="card">
+<img alt="SDAI" src="HVAC_SDAI.jpg"/>
+<div class="card-content">
+<h3>SDAI e HVAC</h3>
+<p>Detecção e alarme de incêndio, pressurização e sistemas de ventilação forçada.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+    SSI BRASIL © 2025 – Todos os direitos reservados |
+    <a href="mailto:suporte.ssi.br@gmail.com">suporte.ssi.br@gmail.com</a> |
+    <a href="https://wa.me/5511981374513" target="_blank">(11) 98137‑4513</a>
+</footer>
 </body>
 </html>
