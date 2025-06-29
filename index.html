@@ -1,81 +1,125 @@
 
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SSI Brasil</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SSI Brasil</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TQoI7rjX0VJ7KmLJ4AWcE4m8c3zPl+2B7rKd4kVoW7VZZ3Qblcmc5Nq6pWk2nUyElhUoOlhq3+8uYHDgb1XkWg==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
+</link></head>
 <body>
-  <header>
-    <h1>SSI Brasil</h1>
-    <nav>
-      <a href="sobre.html">Sobre Nós</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#orcamento">Orçamento</a>
-      <a href="#contato">Contato</a>
-      <a href="entrar.html" class="entrar">Entrar</a>
-    </nav>
-  </header>
+<header>
+<h1>SSI Brasil</h1>
+<nav>
+<a href="sobre.html">Sobre Nós</a>
+<a href="#servicos">Serviços</a>
+<a href="#orcamento">Orçamento</a>
+<a href="#contato">Contato</a>
+<a class="entrar" href="entrar.html">Entrar</a>
+</nav>
+</header>
+<section class="hero">
+<h2>Soluções em Automação, Elétrica, CFTV e HVAC</h2>
+<p>Projetos inteligentes, instalações modernas e integração tecnológica para ambientes industriais, comerciais e residenciais.</p>
+</section>
+<section class="sobre" id="sobre">
+<div>
+<h3>Quem Somos</h3>
+<p>Especialistas em desenvolver e integrar soluções tecnológicas nas áreas de automação, elétrica, redes, segurança e controle predial. Atuamos com excelência em projetos novos, retrofit e manutenção técnica.</p>
+</div>
+<div></div>
+</section>
+<section class="servicos" id="servicos">
+<h3>Nossos Serviços</h3>
+<div class="cards">
+<div class="card">
+<img alt="Automação" class="servico-img" src="img/automacao.jpg"/>
+<h4>Automação</h4>
+<p>Soluções com CLP, IoT e supervisão remota.</p>
+</div>
+<div class="card">
+<img alt="Elétrica" class="servico-img" src="img/eletrica.jpg"/>
+<h4>Elétrica</h4>
+<p>Projetos e instalações elétricas industriais.</p>
+</div>
+<div class="card">
+<img alt="HVAC" class="servico-img" src="img/hvac.jpg"/>
+<h4>HVAC</h4>
+<p>Climatização, SDAI e pressurização.</p>
+</div>
+<div class="card">
+<img alt="Controle de Acesso" class="servico-img" src="img/controle.jpg"/>
+<h4>Controle de Acesso</h4>
+<p>Segurança e monitoramento inteligente.</p>
+</div>
+<div class="card">
+<img alt="Redes &amp; TI" class="servico-img" src="img/redes.jpg"/>
+<h4>Redes &amp; TI</h4>
+<p>Infraestrutura e cabeamento estruturado.</p>
+</div>
+<div class="card">
+<img alt="Projetos de Engenharia" class="servico-img" src="img/engenharia.jpg"/>
+<h4>Projetos de Engenharia</h4>
+<p>Desenvolvimento completo de soluções técnicas para obras e instalações.</p>
+</div>
+<div class="card">
+<img alt="Manutenção" class="servico-img" src="img/manutencao.jpg"/>
+<h4>Manutenção</h4>
+<p>Serviços corretivos e preventivos com equipe técnica especializada.</p>
+</div>
+<div class="card">
+<img alt="Instalação" class="servico-img" src="img/instalacao.jpg"/>
+<h4>Instalação</h4>
+<p>Execução de obras e montagem de sistemas com excelência.</p>
+</div>
 
-  <section class="hero">
-    <h2>Soluções em Automação, Elétrica, CFTV e HVAC</h2>
-    <p>Projetos inteligentes, instalações modernas e integração tecnológica para ambientes industriais, comerciais e residenciais.</p>
-  </section>
 
-  <section id="sobre" class="sobre">
-    <div>
-      <h3>Quem Somos</h3>
-      <p>Especialistas em desenvolver e integrar soluções tecnológicas nas áreas de automação, elétrica, redes, segurança e controle predial. Atuamos com excelência em projetos novos, retrofit e manutenção técnica.</p>
-    </div>
-    <div></div>
-  </section>
 
-  <section id="servicos" class="servicos">
-    <h3>Nossos Serviços</h3>
-    <div class="cards">
-      <div class="card"><i class="fas fa-cogs"></i><h4>Automação</h4><p>Soluções com CLP, IoT e supervisão remota.</p></div>
-      <div class="card"><i class="fas fa-bolt"></i><h4>Elétrica</h4><p>Projetos e instalações elétricas industriais.</p></div>
-      <div class="card"><i class="fas fa-fan"></i><h4>HVAC</h4><p>Climatização, SDAI e pressurização.</p></div>
-      <div class="card"><i class="fas fa-door-closed"></i><h4>Controle de Acesso</h4><p>Segurança e monitoramento inteligente.</p></div>
-      <div class="card"><i class="fas fa-network-wired"></i><h4>Redes & TI</h4><p>Infraestrutura e cabeamento estruturado.</p></div>
-      <div class="card"><i class="fas fa-drafting-compass"></i><h4>Projetos de Engenharia</h4><p>Desenvolvimento completo de soluções técnicas para obras e instalações.</p></div>
-      <div class="card"><i class="fas fa-tools"></i><h4>Manutenção</h4><p>Serviços corretivos e preventivos com equipe técnica especializada.</p></div>
-      <div class="card"><i class="fas fa-wrench"></i><h4>Instalação</h4><p>Execução de obras e montagem de sistemas com excelência.</p></div>
-    </div>
-  </section>
 
-  <section id="orcamento" class="orcamento">
-    <h3>Solicite um Orçamento</h3>
-    <form action="https://formspree.io/f/xzzgadpp" method="POST">
-      <select name="area">
-        <option disabled selected>Selecione uma área</option>
-        <option>Engenharia</option>
-        <option>Projetos</option>
-        <option>Retrofit</option>
-      </select>
-      <select name="produto">
-        <option disabled selected>Selecione um produto</option>
-        <option>CFTV</option>
-        <option>HVAC</option>
-        <option>Elétrica</option>
-        <option>Automação</option>
-        <option>TI</option>
-        <option>Redes</option>
-        <option>Instalação</option>
-        <option>Manutenção</option>
-        <option>Controle de Acesso</option>
-      </select>
-      <textarea name="mensagem" rows="4" placeholder="Descreva sua necessidade..."></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
 
-  <footer id="contato">
-    <p>suporte.ssi.br@gmail.com | (11) 98137-4513 | <a href="https://wa.me/5511981374513">WhatsApp</a> | <a href="mailto:suporte.ssi.br@gmail.com">E-mail</a></p>
-  </footer>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section class="orcamento" id="orcamento">
+<h3>Solicite um Orçamento</h3>
+<form action="https://formspree.io/f/xzzgadpp" method="POST">
+<select name="area">
+<option disabled="" selected="">Selecione uma área</option>
+<option>Engenharia</option>
+<option>Projetos</option>
+<option>Retrofit</option>
+</select>
+<select name="produto">
+<option disabled="" selected="">Selecione um produto</option>
+<option>CFTV</option>
+<option>HVAC</option>
+<option>Elétrica</option>
+<option>Automação</option>
+<option>TI</option>
+<option>Redes</option>
+<option>Instalação</option>
+<option>Manutenção</option>
+<option>Controle de Acesso</option>
+</select>
+<textarea name="mensagem" placeholder="Descreva sua necessidade..." rows="4"></textarea>
+<button type="submit">Enviar</button>
+</form>
+</section>
+<footer id="contato">
+<p>suporte.ssi.br@gmail.com | (11) 98137-4513 | <a href="https://wa.me/5511981374513">WhatsApp</a> | <a href="mailto:suporte.ssi.br@gmail.com">E-mail</a></p>
+</footer>
 </body>
 </html>
