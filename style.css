@@ -7,6 +7,7 @@ body {
 }
 header {
   background: #00468C;
+  padding: 0.5rem 1.5rem;
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -18,15 +19,19 @@ header {
 }
 header h1 {
   margin: 0;
+  font-size: 0.9rem;
   font-size: 1.8rem;
 }
 nav a {
+  font-size: 0.8rem;
   color: white;
   margin-left: 1rem;
   text-decoration: none;
   font-weight: bold;
 }
 nav a.entrar {
+  margin-left: 4rem;
+  font-size: 0.85rem;
   margin-left: 2rem;
   background: white;
   color: #00468C;
@@ -142,4 +147,65 @@ footer a {
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 1rem;
+}
+
+
+/* Distribuição melhorada do cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+
+/* Novo cabeçalho com layout moderno e espaçamento refinado */
+header {
+  padding: 0.5rem 1rem;
+  background-color: #00468C;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+nav a.entrar {
+  background-color: white;
+  color: #00468C;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 2rem;
 }
